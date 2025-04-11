@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python /app/tc_casabona-admin/manage.py runserver 0.0.0.0:8000  # Chemin vers manage.py
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DJANGO_SETTINGS_MODULE=tc_casabona_admin.settings  # Pointing to the correct settings module
+
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=tc_casabona
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=mmp54!n36PoP
+
+volumes:
+  postgres_data:

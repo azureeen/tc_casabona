@@ -1,0 +1,25 @@
+# === GLOBAL ===
+*.log
+*.env
+__pycache__/
+*.pyc
+.DS_Store
+
+# === BACKEND (Django) ===
+backend/staticfiles/
+backend/media/
+backend/db.sqlite3
+backend/.env
+
+# === FRONTEND (Jekyll) ===
+frontend/_site/
+frontend/.jekyll-cache/
+frontend/.sass-cache/
+frontend/node_modules/
+
+# === VSCODE / IDEs ===
+.vscode/
+.idea/
+
+# === DOCKER ===
+*.pid
