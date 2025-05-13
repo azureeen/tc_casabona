@@ -1,0 +1,12 @@
+# Ignore les fichiers temporaires générés par Docker
+**/*.log
+**/*.bak
+**/*.swp
+
+# Ignore le répertoire node_modules
+node_modules/
+
+# Ignore les fichiers spécifiques à l'environnement local
+.DS_Store
+.git
+*.git

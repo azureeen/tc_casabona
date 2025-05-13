@@ -1,23 +1,20 @@
-# Utilisation de Python 3.13 pour le container
-FROM python:3.13-slim
+# Utilisation de l'image Python officielle
+FROM python:3.9-slim
 
-# Installer les outils nécessaires pour PostgreSQL
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libpq-dev \
-    && rm -rf /var/lib/apt/lists/*
-
-# Répertoire de travail
+# Définir le répertoire de travail
 WORKDIR /app
 
-# Copier les fichiers de l'application dans le container
-COPY . /app/
+# Copier les fichiers requirements pour installer les dépendances
+COPY backend/requirements.txt /app/
 
 # Installer les dépendances
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Exposer le port du serveur Django
+# Copier tous les fichiers du backend dans le conteneur
+COPY backend/ /app/
+
+# Exposer le port 8000 pour l'application Django
 EXPOSE 8000
 
-# Lancer le serveur Django
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Commande pour démarrer Django
+CMD ["python", "tc_casabona_admin/manage.py", "runserver", "0.0.0.0:8000"]

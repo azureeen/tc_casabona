@@ -4,16 +4,28 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile
-    command: python /app/tc_casabona-admin/manage.py runserver 0.0.0.0:8000  # Chemin vers manage.py
+      dockerfile: backend/Dockerfile
+    command: python /app/manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/app
+      - ./backend:/app   # <-- On monte uniquement le dossier backend pour éviter les conflits
     ports:
       - "8000:8000"
     depends_on:
       - db
     environment:
-      - DJANGO_SETTINGS_MODULE=tc_casabona_admin.settings  # Pointing to the correct settings module
+      - DJANGO_SETTINGS_MODULE=tc_casabona_admin.settings
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./frontend:/app
+    command: sh -c "bundle install && bundle exec jekyll serve --host 0.0.0.0 --port 4000"  # <-- On lance explicitement le serveur
+    environment:
+      - JEKYLL_ENV=production
 
   db:
     image: postgres:13

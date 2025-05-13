@@ -76,9 +76,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'tc_casabona',  # Nom de ta base de données
-        'USER': 'administrateur',  # Utilisateur de la base de données
-        'PASSWORD': 'loN54&mmNvc96',  # Mot de passe de l'utilisateur
-        'HOST': 'localhost',  # Adresse du serveur DB (localhost si c'est sur ta machine)
+        'USER': 'admin',  # Utilisateur de la base de données
+        'PASSWORD': 'mmp54!n36PoP',  # Mot de passe de l'utilisateur
+        'HOST': 'db',  # Adresse du serveur DB (localhost si c'est sur ta machine)
         'PORT': '5432',  # Port PostgreSQL par défaut
     }
 }
