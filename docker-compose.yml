@@ -7,7 +7,8 @@ services:
       dockerfile: backend/Dockerfile
     command: python /app/manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./backend:/app   # <-- On monte uniquement le dossier backend pour éviter les conflits
+      - ./backend:/app
+      - ./frontend/_data:/app/_data   # <-- On monte le _data de Jekyll dans Django
     ports:
       - "8000:8000"
     depends_on:
@@ -23,7 +24,7 @@ services:
       - "4000:4000"
     volumes:
       - ./frontend:/app
-    command: sh -c "bundle install && bundle exec jekyll serve --host 0.0.0.0 --port 4000"  # <-- On lance explicitement le serveur
+    command: sh -c "bundle install && bundle exec jekyll serve --host 0.0.0.0 --port 4000 --watch"
     environment:
       - JEKYLL_ENV=production
 

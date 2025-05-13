@@ -1,123 +1,81 @@
-# 🎾Projet TC Casabona
+# 🎾 Tennis Club Casabona - Site Vitrine 🚀
 
-Ce projet est une plateforme web pour le club de tennis Casabona, comprenant un backend développé avec Django et un frontend statique généré avec Jekyll. Le projet utilise Docker pour faciliter le développement et le déploiement dans un environnement isolé et reproductible.
+Le site vitrine officiel du **Tennis Club Casabona**, développé avec un frontend **Jekyll**, un backend **Django**, et une base de données PostgreSQL. L'application est conteneurisée avec **Docker** et orchestrée via docker-compose pour un déploiement facile sur un VPS KV2 chez Hostinger.
 
-## Table des matières
+---
 
-- [Prérequis](#prérequis)
-- [Installation](#installation)
-- [Structure du projet](#structure-du-projet)
-- [Docker](#docker)
-- [Développement](#développement)
-- [Démarrer l'application](#démarrer-lapplication)
-- [Contribuer](#contribuer)
-- [Licence](#licence)
 
-## Prérequis
+## 🔥 Fonctionnalités
+- ✅ Site vitrine avec gestion de contenu depuis l'admin Django  
+- ⚡ Frontend Jekyll pour un rendu rapide et optimisé  
+- 🔄 Backend Django pour la gestion dynamique des données  
+- 🗄️ Base de données PostgreSQL pour le stockage structuré  
+- 🐳 Docker Compose pour le déploiement unifié (frontend + backend + DB)  
+- 🤖 Intégration future d'un chatbot interactif basé sur l'IA  
 
-Avant de démarrer, assurez-vous que vous avez les outils suivants installés :
+---
 
-- [Docker](https://www.docker.com/get-started) (version 20.10 ou plus récente)
-- [Docker Compose](https://docs.docker.com/compose/install/) (version 1.27 ou plus récente)
-
-## Installation
-
-1. Clonez ce dépôt sur votre machine locale :
-
-   ```bash
-   git clone https://github.com/ton-utilisateur/tc_casabona.git
-   cd tc_casabona
-   ```
-2. Construisez les images Docker pour le backend et le frontend :
-    ```bash
-    docker-compose build
-    ```
-3. Lancez les services avec Docker Compose :
-    ```bash
-    docker-compose up
-    ```
-    Cela va démarrer trois services :
-
-      - Le backend Django (disponible sur http://localhost:8000)
-      - Le frontend Jekyll (disponible sur http://localhost:4000)
-      - La base de données PostgreSQL (utilisée par Django)
-
-## Structure du projet
-
-Voici un aperçu de la structure du projet :
-```bash
-tc_casabona/
-├── backend/                     # Code backend Django
-│   ├── tc_casabona_admin/       # Application Django principale
-│   └── Dockerfile               # Dockerfile pour le backend
-├── frontend/                    # Code frontend Jekyll
-│   ├── _config.yml              # Configuration de Jekyll
-│   ├── Gemfile                  # Dépendances Ruby
-│   └── Dockerfile               # Dockerfile pour le frontend
-├── .gitignore                   # Fichiers à ignorer par git
-├── docker-compose.yml           # Configuration des services Docker
-└── README.md                    # Ce fichier
+## 📂 Arborescence du projet
+```plaintext
+.
+├── backend
+│   ├── Dockerfile
+│   ├── manage.py
+│   ├── tc_casabona_admin
+│   └── ...
+│
+├── frontend
+│   ├── Dockerfile
+│   ├── _config.yml
+│   ├── index.html
+│   └── ...
+│
+├── docker-compose.yml
+├── README.md
+└── ...
 ```
-## Docker
 
-Le projet utilise Docker pour garantir que tous les développeurs et environnements de production utilisent le même environnement.
-### Docker Compose
+##  ⚙️ Installation locale
 
-Le fichier docker-compose.yml définit les services suivants :
+### Prérequis :
+- Docker
+- Docker Compose
 
-- web : Le backend Django qui expose l'API et l'administration du site.
-- frontend : Le site statique généré avec Jekyll.
-- db : La base de données PostgreSQL pour stocker les données de l'application.
+### Étapes :
 
-### Utilisation de Docker
+1️⃣ Cloner le dépôt :
+```bash
+git clone https://github.com/tonrepo/tc_casabona.git
+cd tc_casabona
+```
+2️⃣ Lancer l'application :
+```bash
+sudo docker-compose up --build
+```
+3️⃣ Accéder aux services :
+- Frontend (Jekyll) : http://localhost:4000
+- Backend (Django Admin) : http://localhost:8000/admin
 
-Pour démarrer tous les services dans un conteneur Docker, il suffit d'exécuter la commande suivante :
-    ```bash
-    docker-compose up
-    ```
-Cela va créer et démarrer les services définis dans le fichier docker-compose.yml.
-## Développement
+## 🗄️ Gestion du contenu
 
-Pour un développement local, les changements que vous apportez au frontend (Jekyll) ou au backend (Django) seront automatiquement répercutés dans l'environnement Docker, grâce à l'utilisation des volumes Docker.
-### Backend
-
-Le backend est développé avec Django et géré via manage.py. Les migrations de base de données peuvent être appliquées avec :
-    ```bash
-    docker-compose run web python /app/tc_casabona-admin/manage.py migrate
-    ```
-### Frontend
-
-Le frontend est généré avec Jekyll. Pour un environnement de développement local, vous pouvez modifier les fichiers dans le répertoire frontend/ et le site sera automatiquement mis à jour.
-## Démarrer l'application
-
-1. Si ce n'est pas déjà fait, construisez les images Docker :
-    ```bash
-    docker-compose build
-    ```
-2. Lancez les services avec Docker Compose :
-    ```bash
-    docker-compose up
-    ```
-    Accédez à l'application backend via http://localhost:8000 et au frontend via http://localhost:4000.
-
-## Contribuer
-
-1. Fork ce dépôt.
-2. Créez une branche pour votre fonctionnalité : git checkout -b ma-fonctionnalite
-3. Faites vos modifications et commit : git commit -am 'Ajout de ma fonctionnalité'
-4. Poussez vos changements : git push origin ma-fonctionnalite
-5. Ouvrez une Pull Request pour discussion et révision.
-
-## Licence
-
-Ce projet est sous la licence MIT. Voir le fichier LICENSE pour plus d'informations.
+Le contenu du site vitrine peut être modifié directement depuis l'interface **Django Admin**, permettant une gestion simple et rapide.
+L'objectif est de centraliser le contenu statique dans des fichiers YAML ou dans le modèle Django, afin de permettre une mise à jour en temps réel.
 
 
-### Explications des sections ajoutées :
-- **Construire les images Docker** : J'ai ajouté les étapes pour construire les images avec Docker.
-- **Démarrer l'application** : Les étapes pour démarrer l'application en utilisant Docker et Docker Compose.
-- **Contribuer** : Comment contribuer au projet.
-- **Licence** : Pour informer de la licence utilisée.
+## 🚀 Déploiement
 
-Cela permet à un développeur de démarrer facilement avec ton projet, de contribuer et de faire tourner l'application localement en utilisant Docker.
+Le site est prévu pour être déployé sur un **VPS KV2 à Hostinger**.
+Les commandes nécessaires pour le déploiement en production seront ajoutées prochainement.
 
+
+## 🔄 Améliorations futures
+- 🔍 **Chatbot interactif IA** pour guider les utilisateurs
+- 📈 **Statistiques en temps réel** sur les matchs et les événements
+- 🔐 **Sécurisation avancée** avec Nginx en reverse proxy
+
+## 👥 Contributeurs
+- Arthur Trochon — Développeur principal
+
+## 📜 Licence
+
+Projet sous licence MIT.

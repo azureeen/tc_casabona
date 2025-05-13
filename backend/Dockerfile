@@ -10,6 +10,10 @@ COPY backend/requirements.txt /app/
 # Installer les dépendances
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Installer Jekyll et Bundler dans le container
+RUN apt-get update && apt-get install -y ruby-full build-essential
+RUN gem install bundler jekyll
+
 # Copier tous les fichiers du backend dans le conteneur
 COPY backend/ /app/
 

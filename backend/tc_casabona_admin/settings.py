@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Ajoute ici la référence au fichier apps.py
+    'tc_casabona_admin.apps.TcCasabonaAdminConfig',
 ]
 
 MIDDLEWARE = [

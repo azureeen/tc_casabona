@@ -40,7 +40,7 @@ navigation:
     url: https://tenup.fft.fr/club/67970103
 
 # The shortname for your Disqus site to enable comments.
-disqus: justgoodthemes
+disqus: 
 
 # Colors
 accent_color: '#2d72d9'
