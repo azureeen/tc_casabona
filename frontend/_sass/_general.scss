@@ -39,6 +39,11 @@ a {
   }
 }
 
+.home-margin {
+  position: relative;
+  margin-top: 25vh; /* pousse le contenu en dessous de la hauteur de la slider */
+}
+
 h1,
 h2,
 h3,

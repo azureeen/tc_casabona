@@ -8,3 +8,4 @@ class TcCasabonaAdminConfig(AppConfig):
         # Import des signaux ou d'autres fonctionnalités au démarrage
         import tc_casabona_admin.signals
         pass
+

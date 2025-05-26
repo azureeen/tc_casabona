@@ -1,6 +1,6 @@
-<div class="slider">
-    <img src="/images/mountain.jpg" class="active">
-    <img src="/images/mountain-2.jpg">
+<div class="slider {% if page.home %} home {% endif %}" >
+    <img src="/images/terrain1.jpg" class="active">
+    <img src="/images/terrain2.jpg">
   </div>
   
   <script>
@@ -12,6 +12,6 @@
       slides[currentSlide].classList.remove('active');
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
-    }, 5000);
+    }, 10000);
   </script>
   

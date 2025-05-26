@@ -1,9 +1,4 @@
 <header class="site-header">
-  {% if page.url == "/" %}
-  <h1 class="site-title"><a class="logo-text" href="{{ site.baseurl }}/">{{site.title}}</a></h1>
-  {% else %}
-  <p class="site-title"><a class="logo-text" href="{{ site.baseurl }}/">{{site.title}}</a></p>
-  {% endif %}
   <nav class="site-navigation">
     <div class="site-navigation-wrap">
       <h2 class="screen-reader-text">Main navigation</h2>
@@ -25,8 +20,7 @@
   <button id="menu-open" class="menu-toggle"><span class="screen-reader-text">Open Menu</span><span class="icon-menu" aria-hidden="true"></span></button>
 </header>
 
-{% if site.description and site.description != "" and page.url == "/" %}
-<div class="site-description fadeInDown delay_05s">
-  <p>{{ site.description }}</p>
+
+<div class="site-description {% if page.home %} home-nav {% endif %} fadeInDown delay_05s">
+  <h2>{% if site.description and site.description != "" and page.url == "/" %} {{ site.description }} {% else %} {{ site.navigation[1].text }} {% endif %}</h2>
 </div><!-- .site-description -->
-{% endif %}
