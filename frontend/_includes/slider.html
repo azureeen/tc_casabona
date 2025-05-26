@@ -1,0 +1,17 @@
+<div class="slider">
+    <img src="/images/mountain.jpg" class="active">
+    <img src="/images/mountain-2.jpg">
+  </div>
+  
+  <script>
+    // Slider Transition Script
+    const slides = document.querySelectorAll('.slider img');
+    let currentSlide = 0;
+  
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
+  </script>
+  
