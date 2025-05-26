@@ -14,6 +14,9 @@ title: "TC Casabona"
 # A description of your site for meta tag, search engine results.
 description: "TC CASABONA"
 
+# A slogan to meet the ambition of the club
+slogan: "Un club, une famille, une passion : TC Casabona vous attend"
+
 # The subpath of your site, e.g. /blog, for generating urls.
 baseurl: ""
 

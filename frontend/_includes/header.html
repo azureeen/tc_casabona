@@ -1,4 +1,5 @@
 <header class="site-header">
+  <img src="/images/logo.png" alt="logo TC Casabona" height="75px">
   <nav class="site-navigation">
     <div class="site-navigation-wrap">
       <h2 class="screen-reader-text">Main navigation</h2>
@@ -22,5 +23,6 @@
 
 
 <div class="site-description {% if page.home %} home-nav {% endif %} fadeInDown delay_05s">
-  <h2>{% if site.description and site.description != "" and page.url == "/" %} {{ site.description }} {% else %} {{ site.navigation[1].text }} {% endif %}</h2>
+  <h2>{% if site.description and site.description != "" and page.url == "/" %} {{ site.description }} {% else %} {{ page.title }} {% endif %}</h2>
+  <p>{% if page.url == "/" %} {{ site.slogan }} {% endif %}</p>
 </div><!-- .site-description -->
