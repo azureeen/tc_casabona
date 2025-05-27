@@ -11,6 +11,8 @@ tags: [Roland Garros, Tennis]
 
 <p><u><strong>Les wild card tableaux&nbsp;</strong></u></p>
 
+<!--more-->
+
 <p><strong>Dames&nbsp;</strong></p>
 
 <p><strong>- </strong>Lo&iuml;s BOISSON (21 ans - Classement WTA au 5 mai : 513e) Elsa JACQUEMOT (22 ans - Classement WTA au 5 mai : 140e) - - L&eacute;olia JEANJEAN (29 ans - Classement WTA au 5 mai : 104e) Chlo&eacute; PAQUET (30 ans - Classement WTA au 5 mai : 138e) -&nbsp; - Diane PARRY (22 ans - Classement WTA au 5 mai : 102e) RAKOTOMANGA RAJAONAH Sarah Tiantsoa (19 ans - Classement WTA au 5 mai : 239e) Iva JOVIC (USTA) Destanee AIAVA (Tennis Australia)&nbsp;</p>

@@ -1,0 +1,28 @@
+features:
+  - icon: fa-thin fa-calendar-clock
+    title: Réservation
+    image: /images/terrain.jpg
+    description: Réservez facilement un court en ligne, à tout moment.
+    link: https://tenup.fft.fr/club/67970103/reservations
+    blank: true
+
+  - icon: fa-thin fa-racquet
+    title: Cours
+    image: /images/entrainement.jpg
+    description: Découvrez nos cours collectifs et particuliers pour tous les niveaux.
+    link: /cours/
+    blank: false
+
+  - icon: fa-thin fa-tennis-ball
+    title: École de tennis
+    image: /images/jeune.jpg
+    description: Initiez vos enfants au tennis avec une pédagogie adaptée et ludique.
+    link: /ecole-tennis/
+    blank: false
+
+  - icon: fa-thin fa-trophy
+    title: Tournois & Équipes
+    image: /images/tournoi.jpg
+    description: Participez aux tournois du club et soutenez nos équipes de championnat par équipe
+    link: https://tenup.fft.fr/club/67970103/competitions
+    blank: true
