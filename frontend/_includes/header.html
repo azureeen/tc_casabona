@@ -23,7 +23,7 @@
 </header>
 
 
-<div class="site-description {% if page.home %} home-nav {% endif %} fadeInDown delay_05s">
+<div class="site-description {% if page.url == '/' %} home-nav  {% else %} inner {% endif %} fadeInDown delay_05s">
   <h2>{% if site.description and site.description != "" and page.url == "/" %} {{ site.description }} {% else %} {{ page.title }} {% endif %}</h2>
   <p>{% if page.url == "/" %} {{ site.slogan }} {% endif %}</p>
 </div><!-- .site-description -->
