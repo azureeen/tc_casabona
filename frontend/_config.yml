@@ -31,16 +31,17 @@ google_analytics: ""
 
 # Site navigation - each item must have a title and a url.
 navigation:
-  - text: Accueil
-    url: /
   - text: Le Club
     url: /club/
   - text: Événements
     url: /evenements/
+  - text: Gallerie
+    url: /gallerie/
   - text: Actualités 
     url: /actualites/
   - text: Ten'up
     url: https://tenup.fft.fr/club/67970103
+    blank: true
 
 # The shortname for your Disqus site to enable comments.
 disqus: 

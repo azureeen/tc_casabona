@@ -405,7 +405,7 @@ video {
   }
 }
 
-#ClubSection {
+#ClubSection, #gallery {
 
   .features-header {
     position: relative;
@@ -509,9 +509,50 @@ video {
 
       p {
         font-size: 0.95rem;
-        color: #ccc;
+        color: #6b747a;
         text-align: start;
       }
     }
+
+    .feature-icon {
+      font-size: 2rem;
+    }
   }
 }
+
+@media only screen and (max-width: 971px) {
+  .feature {
+    flex: 1 1 auto !important;
+  }
+}
+
+
+.gallery-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  padding: 20px;
+  margin-top: 5rem;
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 1; /* carré */
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  border-radius: 0;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+@media (max-width: 781px) {
+  .gallery-items {  grid-template-columns: auto;}
+}  

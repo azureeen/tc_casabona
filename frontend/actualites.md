@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Le Club
-description: Présentation du TC Casabona, club de tennis à Saint-Pierre (974)
-feature_image: images/club-tennis-casabona.jpg
+title: Actualités
+description: Les actualités du Tennis Club Casabona
+feature_image: images/terrain1.jpg
 ---
 
 **Le TC Casabona** est un club de tennis situé à Saint-Pierre, sur l’île de La Réunion. Fondé pour rassembler passionnés et amateurs, le club propose une ambiance conviviale, des installations de qualité et une dynamique tournée vers l’apprentissage, le loisir et la compétition.

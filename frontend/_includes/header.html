@@ -1,5 +1,5 @@
 <header class="site-header">
-  <img src="/images/logo.png" alt="logo TC Casabona" width="75px">
+  <a href="/"><img src="/images/logo.png" alt="logo TC Casabona" width="75px"></a>
   <nav class="site-navigation">
     <div class="site-navigation-wrap">
       <h2 class="screen-reader-text">Main navigation</h2>
@@ -10,7 +10,7 @@
         {% assign current = 'nav-current' %}
         {% endif %}
         <li class="menu-item {{ current }}">
-          <a class="{{ current }}" href="{{ item.url }}">{{ item.text }}</a>
+          <a class="{{ current }}" href="{{ item.url }}" target="{% if item.blank %} _blank {% endif %}">{{ item.text }}</a>
         </li>
         {% endfor %}
       </ul><!-- .menu -->
