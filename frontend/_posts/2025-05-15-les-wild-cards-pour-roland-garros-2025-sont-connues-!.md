@@ -5,6 +5,7 @@ description: "Découvrez les invitations (wild-cards) attribuées pour les quali
 date: 2025-05-15
 feature_image: /media/blog_images/aA-OjfIqRLdaBrIe_20220524_RG_NG2_5066.jpg
 tags: [Roland Garros, Tennis]
+published: true
 ---
 
 <p>A noter que certaines wild-cards sont attribu&eacute;es dans le cadre des accords de r&eacute;ciprocit&eacute; qui lient la FFT aux f&eacute;d&eacute;rations australienne (Tennis Australia) et am&eacute;ricaine (USTA) de tennis.&nbsp;</p>

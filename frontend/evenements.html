@@ -1,0 +1,190 @@
+---
+layout: default
+title: Événements
+---
+
+<main id="evenements" class="main-content home-margin fadeInDown delay_075s">
+    <div class="features-header">
+        <span class="features-subtitle">À venir</span>
+        <h2 class="features-title">Calendrier</h2>
+        <span class="features-background">CASA</span>
+    </div>
+
+    {% assign today = 'now' | date: "%Y-%m-%d" %}
+    {% assign current_year = today | slice: 0, 4 %}
+    {% assign current_month_number = today | slice: 5, 2 %}
+    {% assign current_month = current_year | append: "-" | append: current_month_number %}
+
+    {% assign months = "01:Janvier,02:Février,03:Mars,04:Avril,05:Mai,06:Juin,07:Juillet,08:Août,09:Septembre,10:Octobre,11:Novembre,12:Décembre" | split: "," %}
+    {% assign month_name = "" %}
+    {% for month in months %}
+    {% assign pair = month | split: ":" %}
+    {% if pair[0] == current_month_number %}
+    {% assign month_name = pair[1] %}
+    {% endif %}
+    {% endfor %}
+    {% assign current_month_name = month_name | append: " " | append: current_year %}
+
+    {%- comment -%} Calcul du nombre de jours du mois en cours {%- endcomment -%}
+    {% assign days_in_month = 31 %}
+    {% if current_month_number == "02" %}
+    {% assign days_in_month = 29 %}
+    {% elsif current_month_number == "04" or current_month_number == "06" or current_month_number == "09" or current_month_number == "11" %}
+    {% assign days_in_month = 30 %}
+    {% endif %}
+
+    {% assign events = site.data.events | where_exp: "item", "item.date contains current_month" %}
+
+    <div class="calendar-wrapper">
+        <div class="calendar-header">
+            <h3>{{ current_month_name }}</h3>
+        </div>
+
+        <div class="calendar-grid">
+            {% for day in (1..days_in_month) %}
+            {% assign day_str = day | prepend: "0" | slice: -2 %}
+            {% assign date_str = current_month | append: "-" | append: day_str %}
+            {% assign today_events = events | where: "date", date_str %}
+
+            <div class="calendar-day {% if today_events.size > 0 %} has-event {% endif %}" data-date="{{ date_str }}">
+                <div class="day-number">{{ day }}</div>
+
+                {% for event in today_events %}
+                <div class="event-preview">
+                    <strong>{{ event.title }}</strong><br>
+                    <small>{{ event.location }} – {{ event.type }}</small>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Liste des événements du mois -->
+    <div class="monthly-event-list">
+        <h3>Événements de {{ current_month_name }}</h3>
+        {% if events.size > 0 %}
+        <ul>
+            {% for event in events %}
+            <li>
+                <strong>{{ event.date }} - {{ event.title }}</strong><br>
+                <small>{{ event.location }} – {{ event.type }}</small>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Aucun événement prévu ce mois-ci.</p>
+        {% endif %}
+    </div>
+
+    <!-- Modal Pop-up -->
+    <div id="event-modal" class="event-modal hidden">
+        <div class="event-modal-content">
+            <span id="event-modal-close" class="close">&times;</span>
+            <div id="event-modal-details"></div>
+        </div>
+    </div>
+</main>
+
+<!-- CSS pour le modal -->
+<style>
+    .event-modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0; top: 0;
+        width: 100vw; height: 100vh;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .event-modal.hidden {
+        display: none;
+    }
+
+    .event-modal-content {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        max-width: 600px;
+        width: 90%;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+
+    .event-modal-content .close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+
+    .calendar-day.has-event {
+        background-color: #f0f8ff;
+        cursor: pointer;
+    }
+
+    .calendar-day .event-preview {
+        font-size: 0.8rem;
+        margin-top: 0.3rem;
+    }
+
+    .monthly-event-list {
+        margin-top: 2rem;
+    }
+
+    .monthly-event-list ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .monthly-event-list li {
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 0.5rem;
+    }
+</style>
+
+<!-- JS pour le modal -->
+<script>
+    const events = {{ site.data.events | jsonify }};
+    const days = document.querySelectorAll('.calendar-day');
+    const modal = document.getElementById('event-modal');
+    const modalContent = document.getElementById('event-modal-details');
+    const modalClose = document.getElementById('event-modal-close');
+
+    days.forEach(day => {
+        day.addEventListener('click', () => {
+            const selectedDate = day.getAttribute('data-date');
+            const filtered = events.filter(e => e.date === selectedDate);
+
+            if (filtered.length > 0) {
+                let html = `<h3>${selectedDate}</h3>`;
+                filtered.forEach(e => {
+                    html += `
+            <div class="event-box">
+              <h4>${e.title}</h4>
+              <p><strong>Heure :</strong> ${e.time}</p>
+              <p><strong>Lieu :</strong> ${e.location}</p>
+              <p><strong>Type :</strong> ${e.type}</p>
+              <p>${e.description}</p>
+            </div>`;
+                });
+                modalContent.innerHTML = html;
+                modal.classList.remove('hidden');
+            }
+        });
+    });
+
+    modalClose.addEventListener('click', () => {
+        modal.classList.add('hidden');
+    });
+
+    window.addEventListener('click', e => {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+        }
+    });
+</script>

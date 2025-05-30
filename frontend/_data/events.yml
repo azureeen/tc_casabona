@@ -1,0 +1,70 @@
+- title: Assemblée générale annuelle
+  date: 2025-05-18
+  time: 18:30
+  location: Club House
+  type: assemblée générale
+  description: "Assemblée générale du club pour faire le bilan de l'année et présenter les projets futurs."
+
+- title: TMC Femme 4ème série
+  date: 2025-05-25
+  time: 09:00
+  location: TC Casabona
+  type: tournoi
+  description: "Tournoi Multi-Chances réservé aux femmes classées 4ème série."
+
+- title: TMC Vert
+  date: 2025-05-29
+  time: 13:00
+  location: Court n°2
+  type: tournoi
+  description: "Tournoi pour les jeunes joueurs de niveau vert."
+
+- title: Tournoi Interclubs
+  date: 2025-06-12
+  time: 14:00
+  location: TC Casabona
+  type: tournoi
+  description: "Tournoi régional avec participation de plusieurs clubs de l'île."
+
+- title: Entraînement jeunes
+  date: 2025-06-14
+  time: 10:00
+  location: Court n°3
+  type: entrainement
+  description: "Séance d'entraînement pour les jeunes de 10 à 14 ans."
+
+- title: Réunion des membres
+  date: 2025-06-17
+  time: 18:00
+  location: Club House
+  type: réunion
+  description: "Présentation des projets 2025 et échanges avec les membres."
+
+- title: TMC Homme 3ème série
+  date: 2025-07-05
+  time: 08:30
+  location: TC Casabona
+  type: tournoi
+  description: "Tournoi Multi-Chances pour les hommes classés 3ème série."
+
+- title: Stage intensif jeunes
+  date: 2025-07-10
+  time: 09:00
+  location: Court central
+  type: stage
+  description: "Stage intensif d'été pour les jeunes de 8 à 16 ans. Préparation physique et technique."
+
+- title: Soirée barbecue du club
+  date: 2025-07-19
+  time: 19:00
+  location: Club House
+  type: convivial
+  description: "Soirée barbecue ouverte à tous les membres du club. Ambiance festive et musicale."
+
+- title: Assemblée extraordinaire
+  date: 2025-07-23
+  time: 18:00
+  location: Club House
+  type: assemblée générale
+  description: "Assemblée pour discuter des nouveaux statuts et du budget exceptionnel."
+

@@ -39,9 +39,6 @@ navigation:
     url: /gallerie/
   - text: Actualités 
     url: /actualites/
-  - text: Ten'up
-    url: https://tenup.fft.fr/club/67970103
-    blank: true
 
 # The shortname for your Disqus site to enable comments.
 disqus: 
@@ -60,7 +57,7 @@ plugins:
 
 # http://jekyllrb.com/docs/pagination/
 paginate: 3
-paginate_path: '/page:num/'
+paginate_path: '/actualites/page:num/'
 
 
 # Permalinks
