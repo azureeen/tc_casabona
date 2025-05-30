@@ -36,5 +36,32 @@
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Widget Configuration -->
+    <script>
+        window.ChatWidgetConfig = {
+            webhook: {
+                url: 'https://n8n.tc-casabona.re/webhook/f406671e-c954-4691-b39a-66c90aa2f103/chat',
+                route: 'general'
+            },
+            branding: {
+                logo: '/images/logo.png',
+                name: 'Tennis Club Casabona', // Your company name
+                welcomeText: 'Bonjour 👋, comment puis-je vous aider ?', //Welcome message
+                responseTimeText: 'Nous répondons assez rapidement en général' //Response time message
+            },
+            style: {
+                primaryColor: 'rgba(0, 122, 252, 0.35)', //Primary color
+                secondaryColor: '#07E6F3', //Secondary color
+                position: 'right', //Position of the widget (left or right)
+                backgroundColor: '#ffffff', //Background color of the chat widget
+                fontColor: 'rgba(0, 122, 252, 1)' //Text color for messages and interface
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/WayneSimpson/n8n-chatbot-template@ba944c3/chat-widget.js"></script>
+    <!-- Widget Script -->
+    
+
 </body>
 </html>

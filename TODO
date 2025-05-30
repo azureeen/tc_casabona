@@ -1,3 +1,7 @@
 frontend:
     - grid et items accueil : gérer l'extension sur 2 en écran de moyenne taille
     - titre pages : afficher le fond par rapport à la taille du titre, sinon ça dépasse
+
+
+n8n : 
+    - Airtable : configure new tables and connect agent with it 
